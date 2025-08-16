@@ -7,6 +7,10 @@ library(fgsea)
 library(msigdbr)
 library(org.Hs.eg.db)
 
+set.seed(123)
+
+##Load MSigDB DNA Repair
+
 mm_BP_sets <- msigdbr(
   species = "Homo sapiens")
 mm_BP_sets
@@ -70,7 +74,7 @@ go_analysis_FOXM1_RNAi <- GSEA(gene_list_FOXM1_RNAi,
                              gson = NULL,
                              TERM2GENE = msigdbr_t2g_filtered,
                              verbose = T,
-                             seed = F,
+                             seed = T,
                              by = "fgsea")
 
 df_FOXM1_RNAi <- as.data.frame(go_analysis_FOXM1_RNAi)
@@ -80,8 +84,8 @@ gseaplot2(go_analysis_FOXM1_RNAi, geneSetID = 1,
           base_size = 12,
           color = "green",
           rel_heights = c(2,0.5,0.5),
-          subplots = 1:3,
-          pvalue_table = T,
+          subplots = 1:2,
+          pvalue_table = F,
           ES_geom = "line")
 
 dotplot(go_analysis_FOXM1_RNAi, showCategory=40, title = "FOXM1 RNAi BPs", 
