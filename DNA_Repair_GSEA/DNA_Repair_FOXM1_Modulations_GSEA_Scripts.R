@@ -60,7 +60,7 @@ head(msigdbr_t2g_filtered)
 foxm1_RNAi_new <- read.table("siFOXM1_2024_ranked.txt", sep="\t", header=T, row.names = 1)
 head(foxm1_RNAi_new)  
 gene_list_FOXM1_RNAi <- foxm1_RNAi_new$log2fc
-names(gene_list_FOXM1_RNAi ) <- rownames(foxm1_RNAi_new)
+names(gene_list_FOXM1_RNAi) <- rownames(foxm1_RNAi_new)
 gene_list_FOXM1_RNAi
 
 
@@ -96,4 +96,5 @@ dotplot(go_analysis_FOXM1_RNAi, showCategory=40, title = "FOXM1 RNAi BPs",
         label_format = 60) + facet_grid(.~.sign)
 
 
-devtools::session_info()
+session_info <- devtools::session_info()
+saveRDS(session_info, "session_info.RDS")
