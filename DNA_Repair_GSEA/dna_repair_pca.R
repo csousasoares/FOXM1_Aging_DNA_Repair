@@ -63,3 +63,7 @@ fviz_pca_ind(pca.data,
   scale_x_continuous(breaks = c(-40, -30,-20,-10,0,10,20,30)) +
   scale_y_continuous(breaks = c(-40, -30,-20,-10,0,10,20,30)) +
   theme()
+
+
+session_info <- devtools::session_info()
+saveRDS(session_info, "session_info.RDS")
