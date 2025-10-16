@@ -88,4 +88,5 @@ pca_final
 saveRDS(pca_final, "pca_final.rds")
 
 
-
+session_info <- devtools::session_info()
+saveRDS(session_info, "session_info.RDS")
