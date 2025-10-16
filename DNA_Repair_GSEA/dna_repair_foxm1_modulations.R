@@ -1,0 +1,164 @@
+
+##Load necessary packages
+
+library(clusterProfiler)
+library(enrichplot)
+library(tidyverse)
+library(fgsea)
+library(msigdbr)
+library(org.Hs.eg.db)
+
+set.seed(123)
+
+##Load MSigDB DNA Repair
+
+mm_BP_sets <- msigdbr(
+  species = "Homo sapiens")
+mm_BP_sets
+
+head(mm_BP_sets)
+colnames(mm_BP_sets)
+
+msigdbr_t2g = mm_BP_sets %>% dplyr::distinct(gs_name, gene_symbol) %>% as.data.frame()
+msigdbr_t2g ##This should have loaded all MSigDB pathways from the msigdbr package as a dataframe, using gene symbols
+
+msigdbr_t2g_filtered <- filter(msigdbr_t2g, gs_name %in% c("GOBP_BASE_EXCISION_REPAIR",
+                                                           "GOBP_DNA_REPAIR",
+                                                           "GOBP_DNA_SYNTHESIS_INVOLVED_IN_DNA_REPAIR",
+                                                           "GOBP_DOUBLE_STRAND_BREAK_REPAIR",
+                                                           "GOBP_DOUBLE_STRAND_BREAK_REPAIR_VIA_NONHOMOLOGOUS_END_JOINING",
+                                                           "GOBP_INTERSTRAND_CROSS_LINK_REPAIR",
+                                                           "GOBP_NUCLEOTIDE_EXCISION_REPAIR",
+                                                           "GOBP_POSITIVE_REGULATION_OF_DNA_REPAIR",
+                                                           "GOBP_POSITIVE_REGULATION_OF_DOUBLE_STRAND_BREAK_REPAIR",
+                                                           "GOBP_POSITIVE_REGULATION_OF_DOUBLE_STRAND_BREAK_REPAIR_VIA_HOMOLOGOUS_RECOMBINATION",
+                                                           "GOBP_POSTREPLICATION_REPAIR",
+                                                           "GOBP_RECOMBINATIONAL_REPAIR",
+                                                           "GOBP_REGULATION_OF_DNA_REPAIR",
+                                                           "GOBP_REGULATION_OF_DOUBLE_STRAND_BREAK_REPAIR",
+                                                           "GOBP_REGULATION_OF_DOUBLE_STRAND_BREAK_REPAIR_VIA_HOMOLOGOUS_RECOMBINATION",
+                                                           "HALLMARK_DNA_REPAIR",
+                                                           "KAUFFMANN_DNA_REPAIR_GENES",
+                                                           "KEGG_BASE_EXCISION_REPAIR",
+                                                           "KEGG_NUCLEOTIDE_EXCISION_REPAIR",
+                                                           "REACTOME_BASE_EXCISION_REPAIR",
+                                                           "REACTOME_DNA_DOUBLE_STRAND_BREAK_REPAIR",
+                                                           "REACTOME_DNA_REPAIR",
+                                                           "REACTOME_GLOBAL_GENOME_NUCLEOTIDE_EXCISION_REPAIR_GG_NER",
+                                                           "REACTOME_HOMOLOGY_DIRECTED_REPAIR",
+                                                           "REACTOME_NUCLEOTIDE_EXCISION_REPAIR",
+                                                           "REACTOME_SUMOYLATION_OF_DNA_DAMAGE_RESPONSE_AND_REPAIR_PROTEINS",
+                                                           "REACTOME_TRANSCRIPTION_COUPLED_NUCLEOTIDE_EXCISION_REPAIR_TC_NER",
+                                                           "WP_BASE_EXCISION_REPAIR",
+                                                           "WP_DNA_REPAIR_PATHWAYS_FULL_NETWORK",
+                                                           "WP_NUCLEOTIDE_EXCISION_REPAIR")) ## Filter relevant DNA Repair Pathways
+head(msigdbr_t2g_filtered)
+
+##Perform GSEA for FOXM1 RNAi - also known as siFOXM1
+
+foxm1_RNAi_new <- read.table("siFOXM1_2024_ranked.txt", sep="\t", header=T, row.names = 1)
+head(foxm1_RNAi_new)  
+gene_list_FOXM1_RNAi <- foxm1_RNAi_new$log2fc
+names(gene_list_FOXM1_RNAi) <- rownames(foxm1_RNAi_new)
+gene_list_FOXM1_RNAi
+
+
+go_analysis_FOXM1_RNAi <- GSEA(gene_list_FOXM1_RNAi,
+                               exponent = 1,
+                               minGSSize = 10,
+                               maxGSSize = 800,
+                               eps = 1e-300,
+                               pvalueCutoff = 1,
+                               pAdjustMethod = "fdr",
+                               gson = NULL,
+                               TERM2GENE = msigdbr_t2g_filtered,
+                               verbose = T,
+                               seed = T,
+                               by = "fgsea")
+
+df_FOXM1_RNAi <- as.data.frame(go_analysis_FOXM1_RNAi)
+write.csv(go_analysis_FOXM1_RNAi, "siFOXM1_2024_DNA_Repair.csv", row.names = F)
+gseaplot2(go_analysis_FOXM1_RNAi, geneSetID = 1,
+          title = go_analysis_FOXM1_RNAi$Description[1],
+          base_size = 12,
+          color = "green",
+          rel_heights = c(2,0.5,0.5),
+          subplots = 1:2,
+          pvalue_table = F,
+          ES_geom = "line")
+
+dotplot(go_analysis_FOXM1_RNAi, showCategory=40, title = "FOXM1 RNAi DNA Repair", 
+        orderBy = "NES", 
+        x = "NES", 
+        color = "p.adjust", 
+        font.size = 7, 
+        label_format = 60) + facet_grid(.~.sign)
+
+
+
+##Perform GSEA for FOXM1 OE - also known as dNdK
+
+dndk_new <- read.table("dndk_2024_ranked.txt", sep="\t", header=T, row.names = 1)
+head(dndk_new)  
+gene_list_FOXM1_OE <- dndk_new$log2fc
+names(gene_list_FOXM1_OE) <- rownames(dndk_new)
+gene_list_FOXM1_OE
+
+
+go_analysis_FOXM1_OE <- GSEA(gene_list_FOXM1_OE,
+                             exponent = 1,
+                             minGSSize = 10,
+                             maxGSSize = 800,
+                             eps = 1e-300,
+                             pvalueCutoff = 1,
+                             pAdjustMethod = "fdr",
+                             gson = NULL,
+                             TERM2GENE = msigdbr_t2g_filtered,
+                             verbose = T,
+                             seed = T,
+                             by = "fgsea")
+
+df_FOXM1_oe <- as.data.frame(go_analysis_FOXM1_OE)
+write.csv(go_analysis_FOXM1_OE, "dndk_2024_DNA_Repair.csv", row.names = F)
+gseaplot2(go_analysis_FOXM1_OE, geneSetID = 1,
+          title = go_analysis_FOXM1_OE$Description[1],
+          base_size = 12,
+          color = "green",
+          rel_heights = c(2,0.5,0.5),
+          subplots = 1:2,
+          pvalue_table = F,
+          ES_geom = "line")
+
+dotplot(go_analysis_FOXM1_OE, showCategory=40, title = "FOXM1 OE DNA Repair", 
+        orderBy = "NES", 
+        x = "NES", 
+        color = "p.adjust", 
+        font.size = 7, 
+        label_format = 60) + facet_grid(.~.sign)
+
+
+##Dotplot of DNA Repair in FOXM1 Modulations
+
+df_FOXM1_RNAi$modulation <- "FOXM1 RNAi"
+df_FOXM1_oe$modulation <- "FOXM1 OE"
+
+df_all <- rbind(df_FOXM1_RNAi, df_FOXM1_oe)
+df_all
+df_all_signif <- df_all %>% dplyr::filter(p.adjust < 0.25) %>% mutate(log10padj = -log10(p.adjust))
+
+
+##Created custom ordering level for broad and specific pathways
+
+order <- read.table("order_custom.txt", header = T, sep = "\t")
+order <- order$ID
+
+df_all_signif$ID <- factor(df_all_signif$ID, levels = order)
+df_all_signif$modulation <- factor(df_all_signif$modulation, levels = c("FOXM1 RNAi", "FOXM1 OE"))
+
+ggplot(df_all_signif, aes(x = modulation, y = ID)) +
+  geom_point(aes(color = NES, size = log10padj)) +
+  theme_bw() +
+  scale_color_gradient2(low = "deepskyblue2", mid = "white", high = "red", midpoint = 0)
+
+session_info <- devtools::session_info()
+saveRDS(session_info, "session_info.RDS")
