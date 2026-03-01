@@ -1,0 +1,79 @@
+track Aged_FOXM1_OE_1
+bigDataUrl https://zenodo.org/records/18819934/files/Aged_FOXM1_OE_1_H3K9me2.bigwig
+shortLabel Aged FOXM1 OE 1
+longLabel Aged FOXM1 OE 1 H3K9me2
+type bigWig
+visibility full
+autoScale on
+
+track Aged_FOXM1_OE_2
+bigDataUrl https://zenodo.org/records/18819934/files/Aged_FOXM1_OE_2_H3K9me2.bigwig
+shortLabel Aged FOXM1 OE 2
+longLabel Aged FOXM1 OE 2 H3K9me2
+type bigWig
+visibility full
+autoScale on
+
+track Aged_Rabbit_IgG
+bigDataUrl https://zenodo.org/records/18819934/files/Aged_Rabbit_IgG.bigwig
+shortLabel Aged Rabbit IgG
+longLabel Aged Rabbit IgG (control)
+type bigWig
+visibility full
+autoScale on
+
+track Aged_Vector_1
+bigDataUrl https://zenodo.org/records/18819934/files/Aged_Vector_1_H3K9me2.bigwig
+shortLabel Aged Vector 1
+longLabel Aged Vector 1 H3K9me2
+type bigWig
+visibility full
+autoScale on
+
+track Aged_Vector_2
+bigDataUrl https://zenodo.org/records/18819934/files/Aged_Vector_2_H3K9me2.bigwig
+shortLabel Aged Vector 2
+longLabel Aged Vector 2 H3K9me2
+type bigWig
+visibility full
+autoScale on
+
+track Young_FOXM1_RNAi_1
+bigDataUrl https://zenodo.org/records/18819934/files/Young_FOXM1_RNAi_1_H3K9me2.bigwig
+shortLabel Young FOXM1 RNAi 1
+longLabel Young FOXM1 RNAi 1 H3K9me2
+type bigWig
+visibility full
+autoScale on
+
+track Young_FOXM1_RNAi_2
+bigDataUrl https://zenodo.org/records/18819934/files/Young_FOXM1_RNAi_2_H3K9me2.bigwig
+shortLabel Young FOXM1 RNAi 2
+longLabel Young FOXM1 RNAi 2 H3K9me2
+type bigWig
+visibility full
+autoScale on
+
+track Young_Mock_1
+bigDataUrl https://zenodo.org/records/18819934/files/Young_Mock_1_H3K9me2.bigwig
+shortLabel Young Mock 1
+longLabel Young Mock 1 H3K9me2
+type bigWig
+visibility full
+autoScale on
+
+track Young_Mock_2
+bigDataUrl https://zenodo.org/records/18819934/files/Young_Mock_2_H3K9me2.bigwig
+shortLabel Young Mock 2
+longLabel Young Mock 2 H3K9me2
+type bigWig
+visibility full
+autoScale on
+
+track Young_Rabbit_IgG
+bigDataUrl https://zenodo.org/records/18819934/files/Young_Rabbit_IgG.bigwig
+shortLabel Young Rabbit IgG
+longLabel Young Rabbit IgG (control)
+type bigWig
+visibility full
+autoScale on
