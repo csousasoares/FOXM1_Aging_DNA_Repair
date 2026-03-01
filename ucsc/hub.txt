@@ -1,0 +1,5 @@
+hub FOXM1_H3K9me2
+shortLabel FOXM1 H3K9me2 Hub
+longLabel FOXM1 H3K9me2 ChIP-seq BigWig Hub
+genomesFile genomes.txt
+email you@example.com
