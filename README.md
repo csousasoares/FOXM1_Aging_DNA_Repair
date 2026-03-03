@@ -6,10 +6,10 @@ Repository for the paper "FOXM1 enhances DNA repair in aged cells to maintain th
 ## RNA-seq Analysis
 
 aging_fibroblasts_analysis
-dna_repair_gsea_foxm1
-pca_and_volcano_foxm1_data
+\ndna_repair_gsea_foxm1
+\npca_and_volcano_foxm1_data
 
 ## H3K9me2 IF or CUT&RUN Analysis
 
 h3k9me2_cut_run_regions
-h3k9me2_g9a
+\nh3k9me2_g9a
