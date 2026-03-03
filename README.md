@@ -5,14 +5,14 @@ Repository for the paper "FOXM1 enhances DNA repair in aged cells to maintain th
 
 ## RNA-seq Analysis
 
-aging_fibroblasts_analysis
+aging_fibroblasts_analysis - Code for differential expression analysis and GSEA between older and younger cohorts of fibroblasts, and heatmap of the FOXM1 DNA Repair network expression across age groups.
 
-dna_repair_gsea_foxm1
+dna_repair_gsea_foxm1 - GSEA of FOXM1 knockdown or overexpression and PCA using DNA repair genes from Biological Processes
 
-pca_and_volcano_foxm1_data
+pca_and_volcano_foxm1_data - Volcano plot of FOXM1 knockdown or overexpression and PCA os differential gene expression analysis.
 
-## H3K9me2 IF or CUT&RUN Analysis
+## H3K9me2 Immunofluorescence or CUT&RUN Analysis
 
-h3k9me2_cut_run_regions
+h3k9me2_cut_run_regions - 
 
 h3k9me2_g9a
