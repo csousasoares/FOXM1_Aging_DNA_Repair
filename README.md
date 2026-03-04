@@ -13,6 +13,6 @@ pca_and_volcano_foxm1_data - Volcano plot of FOXM1 knockdown or overexpression a
 
 ## H3K9me2 Immunofluorescence or CUT&RUN Analysis
 
-h3k9me2_cut_run_regions - 
+h3k9me2_cut_run_regions - Analysis of differentially bound H3K9me2 regions (DBRs) using DiffBind, genomic features of DBRs using ChIPSeeker, rGREAT analysis and motif-distance matrix analysis.
 
-h3k9me2_g9a
+h3k9me2_g9a - Correlation between G9a and H3K9me2 protein levels at single cell level inferred from immunofluorescence.
