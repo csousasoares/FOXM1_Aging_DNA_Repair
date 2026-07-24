@@ -1,5 +1,5 @@
 track Aged_FOXM1_OE_1
-bigDataUrl https://zenodo.org/records/18819934/files/Aged_FOXM1_OE_1_H3K9me2.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Aged_FOXM1_OE_1_H3K9me2.bigwig
 shortLabel Aged FOXM1 OE 1
 longLabel Aged FOXM1 OE 1 H3K9me2
 type bigWig
@@ -7,7 +7,7 @@ visibility full
 autoScale on
 
 track Aged_FOXM1_OE_2
-bigDataUrl https://zenodo.org/records/18819934/files/Aged_FOXM1_OE_2_H3K9me2.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Aged_FOXM1_OE_2_H3K9me2.bigwig
 shortLabel Aged FOXM1 OE 2
 longLabel Aged FOXM1 OE 2 H3K9me2
 type bigWig
@@ -15,7 +15,7 @@ visibility full
 autoScale on
 
 track Aged_Rabbit_IgG
-bigDataUrl https://zenodo.org/records/18819934/files/Aged_Rabbit_IgG.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Aged_Rabbit_IgG.bigwig
 shortLabel Aged Rabbit IgG
 longLabel Aged Rabbit IgG (control)
 type bigWig
@@ -23,7 +23,7 @@ visibility full
 autoScale on
 
 track Aged_Vector_1
-bigDataUrl https://zenodo.org/records/18819934/files/Aged_Vector_1_H3K9me2.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Aged_Vector_1_H3K9me2.bigwig
 shortLabel Aged Vector 1
 longLabel Aged Vector 1 H3K9me2
 type bigWig
@@ -31,15 +31,127 @@ visibility full
 autoScale on
 
 track Aged_Vector_2
-bigDataUrl https://zenodo.org/records/18819934/files/Aged_Vector_2_H3K9me2.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Aged_Vector_2_H3K9me2.bigwig
 shortLabel Aged Vector 2
 longLabel Aged Vector 2 H3K9me2
 type bigWig
 visibility full
 autoScale on
 
+track D1
+bigDataUrl https://zenodo.org/records/21536457/files/D1.bigwig
+shortLabel D1
+longLabel D1 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track D2
+bigDataUrl https://zenodo.org/records/21536457/files/D2.bigwig
+shortLabel D2
+longLabel D2 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track D3
+bigDataUrl https://zenodo.org/records/21536457/files/D3.bigwig
+shortLabel D3
+longLabel D3 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track IGGO
+bigDataUrl https://zenodo.org/records/21536457/files/IGGO.bigwig
+shortLabel IgG Old
+longLabel IgG Old (control, unverified label)
+type bigWig
+visibility full
+autoScale on
+
+track IGGY
+bigDataUrl https://zenodo.org/records/21536457/files/IGGY.bigwig
+shortLabel IgG Young
+longLabel IgG Young (control, unverified label)
+type bigWig
+visibility full
+autoScale on
+
+track M1
+bigDataUrl https://zenodo.org/records/21536457/files/M1.bigwig
+shortLabel M1
+longLabel M1 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track M2
+bigDataUrl https://zenodo.org/records/21536457/files/M2.bigwig
+shortLabel M2
+longLabel M2 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track M3
+bigDataUrl https://zenodo.org/records/21536457/files/M3.bigwig
+shortLabel M3
+longLabel M3 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track P1
+bigDataUrl https://zenodo.org/records/21536457/files/P1.bigwig
+shortLabel P1
+longLabel P1 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track P2
+bigDataUrl https://zenodo.org/records/21536457/files/P2.bigwig
+shortLabel P2
+longLabel P2 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track P3
+bigDataUrl https://zenodo.org/records/21536457/files/P3.bigwig
+shortLabel P3
+longLabel P3 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track S1
+bigDataUrl https://zenodo.org/records/21536457/files/S1.bigwig
+shortLabel S1
+longLabel S1 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track S2
+bigDataUrl https://zenodo.org/records/21536457/files/S2.bigwig
+shortLabel S2
+longLabel S2 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
+track S3
+bigDataUrl https://zenodo.org/records/21536457/files/S3.bigwig
+shortLabel S3
+longLabel S3 (condition unlabeled - verify)
+type bigWig
+visibility full
+autoScale on
+
 track Young_FOXM1_RNAi_1
-bigDataUrl https://zenodo.org/records/18819934/files/Young_FOXM1_RNAi_1_H3K9me2.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Young_FOXM1_RNAi_1_H3K9me2.bigwig
 shortLabel Young FOXM1 RNAi 1
 longLabel Young FOXM1 RNAi 1 H3K9me2
 type bigWig
@@ -47,7 +159,7 @@ visibility full
 autoScale on
 
 track Young_FOXM1_RNAi_2
-bigDataUrl https://zenodo.org/records/18819934/files/Young_FOXM1_RNAi_2_H3K9me2.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Young_FOXM1_RNAi_2_H3K9me2.bigwig
 shortLabel Young FOXM1 RNAi 2
 longLabel Young FOXM1 RNAi 2 H3K9me2
 type bigWig
@@ -55,7 +167,7 @@ visibility full
 autoScale on
 
 track Young_Mock_1
-bigDataUrl https://zenodo.org/records/18819934/files/Young_Mock_1_H3K9me2.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Young_Mock_1_H3K9me2.bigwig
 shortLabel Young Mock 1
 longLabel Young Mock 1 H3K9me2
 type bigWig
@@ -63,7 +175,7 @@ visibility full
 autoScale on
 
 track Young_Mock_2
-bigDataUrl https://zenodo.org/records/18819934/files/Young_Mock_2_H3K9me2.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Young_Mock_2_H3K9me2.bigwig
 shortLabel Young Mock 2
 longLabel Young Mock 2 H3K9me2
 type bigWig
@@ -71,7 +183,7 @@ visibility full
 autoScale on
 
 track Young_Rabbit_IgG
-bigDataUrl https://zenodo.org/records/18819934/files/Young_Rabbit_IgG.bigwig
+bigDataUrl https://zenodo.org/records/21536457/files/Young_Rabbit_IgG.bigwig
 shortLabel Young Rabbit IgG
 longLabel Young Rabbit IgG (control)
 type bigWig
